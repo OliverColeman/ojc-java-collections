@@ -1,0 +1,11 @@
+bin/
+build/
+doc/
+output/
+etc/
+test-output/
+.gradle
+.settings
+.classpath
+.project
+!gradle-wrapper.jar
