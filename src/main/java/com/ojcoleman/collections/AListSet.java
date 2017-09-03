@@ -29,46 +29,41 @@ import java.util.Set;
 import java.util.function.UnaryOperator;
 
 /**
- * <p>A {link ListSet} backed by an {@link ArrayList}.
- * Addition (appending to the end of the list) and contains operations take 
- * O(1) time. Insertion and removal take O(n) time (excepting at the end of 
- * the list, in which case it is O(1)). Index-of operations take O(n) time.
- * 
- * <p><strong>Note that this implementation is not synchronized.</strong>
- * If multiple threads access an instance concurrently,
- * and at least one of the threads modifies it structurally, it
- * <i>must</i> be synchronized externally.  (A structural modification is
- * any operation that adds or deletes one or more elements, or explicitly
- * resizes the backing array; merely setting the value of an element is not
- * a structural modification.)  This is typically accomplished by
+ * <p>
+ * A {link ListSet} backed by an {@link ArrayList}. Addition (appending to the end of the list) and contains operations
+ * take O(1) time. Insertion and removal take O(n) time (excepting at the end of the list, in which case it is O(1)).
+ * Index-of operations take O(n) time.
+ * </p>
+ * <p>
+ * <strong>Note that this implementation is not synchronized.</strong> If multiple threads access an instance
+ * concurrently, and at least one of the threads modifies it structurally, it <i>must</i> be synchronized externally. (A
+ * structural modification is any operation that adds or deletes one or more elements, or explicitly resizes the backing
+ * array; merely setting the value of an element is not a structural modification.) This is typically accomplished by
  * synchronizing on some object that naturally encapsulates the list.
+ * </p>
+ * <p>
+ * If no such object exists, the list should be "wrapped" using the {@link Collections#synchronizedList} method. This is
+ * best done at creation time, to prevent accidental unsynchronized access to the list:
+ * <pre>  List list = Collections.synchronizedList(new ArrayList(...));</pre>
+ * 
  *
- * If no such object exists, the list should be "wrapped" using the
- * {@link Collections#synchronizedList}
- * method.  This is best done at creation time, to prevent accidental
- * unsynchronized access to the list:<pre>
- *   List list = Collections.synchronizedList(new ArrayList(...));</pre></p>
- *
- * <p><a name="fail-fast"/>
+ * <p>
  * The iterators returned by this class's {@link #iterator() iterator} and
- * {@link #listIterator(int) listIterator} methods are <em>fail-fast</em>:
- * if the list is structurally modified at any time after the iterator is
- * created, in any way except through the iterator's own
- * {@link ListIterator#remove()} or
- * {@link ListIterator#add(Object)} methods, the iterator will throw a
- * {@link ConcurrentModificationException}.  Thus, in the face of
- * concurrent modification, the iterator fails quickly and cleanly, rather
- * than risking arbitrary, non-deterministic behaviour at an undetermined
- * time in the future.</p>
+ * {@link #listIterator(int) listIterator} methods are <em>fail-fast</em>: if the list is structurally modified at any
+ * time after the iterator is created, in any way except through the iterator's own {@link ListIterator#remove()} or
+ * {@link ListIterator#add(Object)} methods, the iterator will throw a {@link ConcurrentModificationException}. Thus, in
+ * the face of concurrent modification, the iterator fails quickly and cleanly, rather than risking arbitrary,
+ * non-deterministic behaviour at an undetermined time in the future.
+ * </p>
  *
- * <p>Note that the fail-fast behaviour of an iterator cannot be guaranteed
- * as it is, generally speaking, impossible to make any hard guarantees in the
- * presence of unsynchronized concurrent modification.  Fail-fast iterators
- * throw {@code ConcurrentModificationException} on a best-effort basis.
- * Therefore, it would be wrong to write a program that depended on this
- * exception for its correctness:  <i>the fail-fast behaviour of iterators
- * should be used only to detect bugs.</i></p>
- *  
+ * <p>
+ * Note that the fail-fast behaviour of an iterator cannot be guaranteed as it is, generally speaking, impossible to
+ * make any hard guarantees in the presence of unsynchronized concurrent modification. Fail-fast iterators throw
+ * {@code ConcurrentModificationException} on a best-effort basis. Therefore, it would be wrong to write a program that
+ * depended on this exception for its correctness: <i>the fail-fast behaviour of iterators should be used only to detect
+ * bugs.</i>
+ * </p>
+ * 
  * @author O. J. Coleman
  */
 public class AListSet<E> extends ArrayList<E> implements ListSet<E> {

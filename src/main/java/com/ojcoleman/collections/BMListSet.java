@@ -39,7 +39,7 @@ import com.google.common.collect.HashBiMap;
  * <p>A {link ListSet} backed by a <a href="http://google.github.io/guava/releases/19.0/api/docs/com/google/com.ojcoleman.collections/collect/HashBiMap.html">HashBiMap</a>
  * Addition (appending to end of list), contains, and index-of operations 
  * take O(1) time. Insertion and removal take O(n) time (excepting at the 
- * end of the list, in which case it is O(1)).
+ * end of the list, in which case it is O(1)).</p>
  * 
  * <p><strong>Note that this implementation is not synchronized.</strong>
  * If multiple threads access an instance concurrently,
@@ -48,15 +48,14 @@ import com.google.common.collect.HashBiMap;
  * any operation that adds or deletes one or more elements, or explicitly
  * resizes the backing array; merely setting the value of an element is not
  * a structural modification.)  This is typically accomplished by
- * synchronizing on some object that naturally encapsulates the list.
+ * synchronizing on some object that naturally encapsulates the list.</p>
  *
- * If no such object exists, the list should be "wrapped" using the
+ * <p>If no such object exists, the list should be "wrapped" using the
  * {@link Collections#synchronizedList}
  * method.  This is best done at creation time, to prevent accidental
- * unsynchronized access to the list:<pre>
- *   List list = Collections.synchronizedList(new ArrayList(...));</pre></p>
+ * unsynchronized access to the list:<pre>  List list = Collections.synchronizedList(new ArrayList(...));</pre>
  *
- * <p><a name="fail-fast"/>
+ * <p>
  * The iterators returned by this class's {@link #iterator()} and
  * {@link #listIterator(int)} methods are <em>fail-fast</em>:
  * if the list is structurally modified at any time after the iterator is

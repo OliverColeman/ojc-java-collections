@@ -40,3 +40,8 @@ test {
         events "started", "passed", "skipped", "failed", "standardOut", "standardError"
     }
 }
+
+javadoc {
+	source = sourceSets.main.allJava
+  	destinationDir = new File("../ojc-java-collections.gh/reference")
+}

@@ -40,7 +40,7 @@ import com.google.common.collect.HashBiMap;
 /**
  * <p>A {@link ListMap} backed by {@link ListSet}s.
  * Getting, putting and containsKey operations take O(1) time. 
- * Removal and containsValue take O(n) time.
+ * Removal and containsValue take O(n) time.</p>
  * 
  * <p><strong>Note that this implementation is not synchronized.</strong>
  * If multiple threads access an instance concurrently,
@@ -48,10 +48,10 @@ import com.google.common.collect.HashBiMap;
  * <i>must</i> be synchronized externally.  (A structural modification is
  * any operation that adds or deletes one or more entries.)  
  * This is typically accomplished by
- * synchronizing on some object that naturally encapsulates the list.<br/>
- * TODO add synchronized wrapper for ListMa.</p>
+ * synchronizing on some object that naturally encapsulates the list.
+ * TODO add synchronized wrapper for ListMap.</p>
  *
- * <p><a name="fail-fast"/>
+ * <p>
  * The iterators returned by the Sets and Collections returned by methods 
  * of this class are <em>fail-fast</em>:
  * if the ListMap is structurally modified at any time after the iterator is
